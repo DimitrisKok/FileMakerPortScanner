@@ -15,11 +15,18 @@ FileMakerPortScanner is a PowerShell script that simplifies the process of check
 The script tests the following ports commonly used by FileMaker Server:
 
 - **Web and API Ports**: 80, 443, 5003, 16000+
-- **Admin Console Ports**: 2399, 16001, 16004
-- **Custom and Legacy Ports**: 3000, 9889, 9898
-- **Others**: 50003, 50004, 10050, 10051, and more.
-
-For a complete list of ports, refer to the script.
+- FileMaker Server, primary machine, Open Ports: 80, 443, 2399, and 5003
+- Database Server, Available ports: 1895, 5013, 8091, 16001, 16004, 50003, and 50004
+- Web Publishing Engine, Available ports: 3000, 8998, 9889, 9898, 16003, 16020, and 16021
+- FileMaker Server, secondary machine, Open Ports: 80, 443, and 16003
+- FileMaker Pro, Open Ports: 80, 443, and 5003
+- FileMaker Go, Open Ports: 80, 443, and 5003
+- FileMaker WebDirect, Open Ports: 80, 443
+- FileMaker Custom Web Publishing, Open Ports: 80, 443
+- ODBC/JDBC, Open Ports: 2399
+- FileMaker Data API, Open Ports: 443
+- FileMaker Admin Console, Open Ports: 443
+- FileMaker Server enables port 10050 to allow Zabbix passive checks and port 10051 to support Zabbix active checks
 
 ## Requirements
 
