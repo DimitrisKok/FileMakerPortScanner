@@ -72,10 +72,10 @@ Port Connectivity Test:
 You can customize the list of ports to check by modifying the $portsToCheck array in the script.
 
 $portsToCheck = @(80, 443, 5003, 16000)
-Contributing
+## Contributing
 Feel free to fork this repository and submit pull requests with improvements or additional features.
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ```bash
