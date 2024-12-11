@@ -3,7 +3,24 @@ $serverIP = Read-Host -Prompt "Enter the server IPv4 address to check"
 $serverIPv6 = Read-Host -Prompt "Enter the server IPv6 address to check (leave blank if not applicable)"
 
 # Prompt the user for the export file path
-$outputFile = Read-Host -Prompt "Enter the full path for the export file (e.g., C:\Reports\FileMaker_Port_Check_Report.txt)"
+if ($IsWindows) {
+    $defaultPath = "C:\Reports\FileMaker_Port_Check_Report.txt"
+} else {
+    $defaultPath = "$HOME/FileMaker_Port_Check_Report.txt"
+}
+
+$outputFile = Read-Host -Prompt "Enter the full path for the export file (default: $defaultPath)"
+if ([string]::IsNullOrWhiteSpace($outputFile)) {
+    $outputFile = $defaultPath
+}
+
+# Ensure the directory exists
+$outputDir = Split-Path -Path $outputFile -Parent
+if (-not (Test-Path -Path $outputDir)) {
+    Write-Output "Directory does not exist. Creating $outputDir..."
+    New-Item -ItemType Directory -Path $outputDir | Out-Null
+}
+
 
 # Define the list of ports
 $portsToCheck = @(80, 443, 2399, 5003, 1895, 5013, 8091, 16001, 16004, 50003, 50004,
@@ -19,6 +36,7 @@ if ($serverIPv6 -ne "") {
 "" | Out-File -FilePath $outputFile -Append
 
 # Function to check port connectivity
+# Cross-platform Test-Port function
 function Test-Port {
     param (
         [string]$IPAddress,
@@ -26,16 +44,16 @@ function Test-Port {
     )
 
     try {
-        $connection = Test-NetConnection -ComputerName $IPAddress -Port $Port -WarningAction SilentlyContinue
-        if ($connection.TcpTestSucceeded) {
-            return "Open"
-        } else {
-            return "Closed"
-        }
+        # Create a TCP client to check the port
+        $tcpClient = [System.Net.Sockets.TcpClient]::new()
+        $tcpClient.Connect($IPAddress, $Port)
+        $tcpClient.Close()
+        return "Open"
     } catch {
-        return "Error: $_"
+        return "Closed"
     }
 }
+
 
 # Function to check ICMP connectivity
 function Test-ICMP {
