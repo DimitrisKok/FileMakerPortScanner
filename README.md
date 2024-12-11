@@ -1,6 +1,6 @@
 # FileMakerPortScanner
 
-FileMakerPortScanner is a PowerShell script that simplifies the process of checking the connectivity of key FileMaker Server ports. It helps system administrators ensure their FileMaker Server environment is accessible and configured correctly for optimal performance.
+FileMakerPortScanner is a cross platform PowerShell script that simplifies the process of checking the connectivity of key FileMaker Server ports. It helps system administrators ensure their FileMaker Server environment is accessible and configured correctly for optimal performance.
 
 ## Features
 
