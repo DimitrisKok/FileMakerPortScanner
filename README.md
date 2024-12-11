@@ -36,13 +36,13 @@ Clone or download this repository to access the `FileMakerPortScanner.ps1` scrip
 Open PowerShell, navigate to the folder containing the script, and execute it:
 
 .\FileMakerPortScanner.ps1
-3. Provide Input
+## 3. Provide Input
 When prompted:
 
 Enter the IPv4 address of the server.
 Optionally, enter the IPv6 address (or leave blank).
 Specify the path to save the export file (e.g., C:\Reports\PortCheckReport.txt).
-4. View the Report
+## 4. View the Report
 The script generates a detailed report in the specified file. The report includes:
 
 ICMP reachability status for both IPv4 and IPv6.
@@ -68,7 +68,7 @@ Port Connectivity Test:
 2399: Closed
 5003: Open
 ...
-5. Customize the Port List
+## 5. Customize the Port List
 You can customize the list of ports to check by modifying the $portsToCheck array in the script.
 
 $portsToCheck = @(80, 443, 5003, 16000)
