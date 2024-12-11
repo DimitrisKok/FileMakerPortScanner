@@ -32,10 +32,6 @@ For a complete list of ports, refer to the script.
 ### 1. Download the Script
 
 Clone or download this repository to access the `FileMakerPortScanner.ps1` script.
-
-```bash
-git clone https://github.com/DimitrisKok/FileMakerPortScanner.git
-
 ## 2. Run the Script
 Open PowerShell, navigate to the folder containing the script, and execute it:
 
@@ -81,3 +77,8 @@ Feel free to fork this repository and submit pull requests with improvements or 
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+```bash
+git clone https://github.com/DimitrisKok/FileMakerPortScanner.git
+
+
