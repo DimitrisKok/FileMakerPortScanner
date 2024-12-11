@@ -36,11 +36,9 @@ Clone or download this repository to access the `FileMakerPortScanner.ps1` scrip
 ```bash
 git clone https://github.com/DimitrisKok/FileMakerPortScanner.git
 
-2. Run the Script
+## 2. Run the Script
 Open PowerShell, navigate to the folder containing the script, and execute it:
 
-powershell
-Copy code
 .\FileMakerPortScanner.ps1
 3. Provide Input
 When prompted:
