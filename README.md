@@ -29,7 +29,10 @@ The script tests the following ports commonly used by FileMaker Server:
 
 ## Requirements
 
-- Windows operating system with PowerShell 7.4.x or later.
+- Operating System:
+- Windows: Windows 10, Windows 11, or Windows Server.
+- macOS: Version 10.13 (High Sierra) or later.
+- Linux/WSL: Any modern distribution (e.g., Ubuntu, Fedora, Debian).
 - Basic permissions to execute PowerShell scripts.
 - Access to the target server/network for testing.
 
